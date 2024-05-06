@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register - Blood Donation</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .lrform {
+    margin: 0 auto; 
+    flex-direction: column;
+    
+
+    position: relative;
+    background-color: #784b4b;
+    color: black;
+    border:2px solid #7c2c2c;
+    border-radius: 10px;
+    padding:20px;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 2%;
+    font-size: 30px;
+}</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="container1">
+        <h1 class="logo">DonateBlood</h1> 
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <a href="tiii.html">Home</a>
+        <a href="#donors.html">Donors</a>
+        <a href="donate.html">Donate</a>
+        <a href="#about">About Us</a>
+    </div>
+</nav>
+
+<div class="lrform">
+    <p>Be the reason behind someone's smile Donate the blood and make difference</p>
+    
+  
+    <div id="login-form">
+        <div class="content">
+            <center>  
+                <h3>Login</h3>
+              
+            </center>
+          </div>
+        <form name="myform" action="submit_login.php" method="POST">
+            <label for="login_username">Username:</label>
+            <input type="text" id="login_username" name="UserName" required><br><br>
+
+            <label for="login_password">Password:</label>
+            <input type="password" id="login_password" name="Password" required><br><br>
+
+            <input type="submit" value="Login">
+            <button onclick="toggleForm()">Register</button>
+        </form>
+        
+    </div>
+
+
+    
+    <div id="register-form" style="display: none;">
+        <h3>Register</h3>
+        <form action="submit_registration.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="UName" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="Email" required><br><br>
+
+            <label for="gender">Gender:</label>
+                <input type="radio" id="male" name="Gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="Gender" value="female" required>
+                    <label for="male">Female</label><br><br>
+
+            <label for="blood_group">Blood Group:</label>
+            <select id="blood_group" name="BloodGroup" required>
+                <option value="">Select</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select><br><br>
+
+            
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="City" required><br><br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="Adress" required></textarea><br><br>
+            
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">I agree to donate blood</label><br><br>
+
+            <input type="submit" value="Register">
+            <button onclick="toggleForm()">Login</button>
+        </form>
+        
+    </div>
+</div>
+
+<script>
+    function toggleForm() {
+        var loginForm = document.getElementById("login-form");
+        var registerForm = document.getElementById("register-form");
+
+        if (loginForm.style.display === "none") {
+            loginForm.style.display = "block";
+            registerForm.style.display = "none";
+        } else {
+            loginForm.style.display = "none";
+            registerForm.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
